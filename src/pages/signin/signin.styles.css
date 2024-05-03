@@ -1,0 +1,44 @@
+form {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+button[type="submit"] {
+  display: block;
+  background: #ec5990;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background: #bf1650;
+}
