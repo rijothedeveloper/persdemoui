@@ -8,6 +8,7 @@ import Signup from "./pages/signup/Signup.tsx";
 import Logout from "./pages/logout/Logout.tsx";
 import ManagerDashboard from "./pages/managerDashboard/ManagerDashboard.tsx";
 import UserDashboard from "./pages/userDashboard/UserDashboard.tsx";
+import ReimburseForm from "./pages/reimburseForm/ReimburseForm.tsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/user-dashboard",
         element: <UserDashboard />,
+      },
+      {
+        path: "/createreimbursement",
+        element: <ReimburseForm />,
       },
     ],
   },

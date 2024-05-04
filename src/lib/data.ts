@@ -1,4 +1,9 @@
-import { Reimbursement, SignupUserResponse, User } from "./types";
+import {
+  Reimbursement,
+  ReimbursementRequest,
+  SignupUserResponse,
+  User,
+} from "./types";
 import { getUserToken } from "./util";
 
 const BASE_URL = "http://localhost:8080/";
@@ -42,6 +47,25 @@ export async function getMyReimbursements(): Promise<Reimbursement[]> {
   const headers = { Authorization: "Bearer " + getUserToken() };
   const response = await fetch(requestUrl, {
     headers,
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching reimbursements");
+  }
+  return await response.json();
+}
+
+export async function addReimbursements(
+  reimburse: ReimbursementRequest
+): Promise<Reimbursement> {
+  const requestUrl = BASE_URL + "api/v1/reimbursements";
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + getUserToken(),
+  };
+  const response = await fetch(requestUrl, {
+    headers,
+    method: "POST",
+    body: JSON.stringify(reimburse),
   });
   if (!response.ok) {
     throw new Error("Error fetching reimbursements");

@@ -28,8 +28,14 @@ export type Reimbursement = {
   user: User;
 };
 
-enum Status {
+export enum Status {
   APPROVED,
   DENIED,
   PENDING,
 }
+
+export type ReimbursementRequest = {
+  description: string;
+  amount: number;
+  status: Status;
+};

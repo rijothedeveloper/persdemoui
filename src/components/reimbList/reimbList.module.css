@@ -17,3 +17,15 @@
 .headContainer > * {
   width: 33%;
 }
+
+.statusContainer {
+  display: flex;
+  gap: 10px;
+}
+.statusContainer select {
+  border-radius: 8px;
+  /* border: 1px solid rgb(185, 161, 175); */
+  border: 1px solid royalblue;
+  background-color: rgb(39, 35, 35);
+  color: rgb(185, 161, 175);
+}

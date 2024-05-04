@@ -12,12 +12,15 @@ export default function Navbar() {
       <Link to={`/${link.toLowerCase()}`}>{link}</Link>
     </li>
   ));
-  const signLinksArr = ["Logout"];
-  const signLinks = signLinksArr.map((link) => (
-    <li key={link}>
-      <Link to={`/${link.toLowerCase()}`}>{link}</Link>
-    </li>
-  ));
+  const signLinksArr = ["Create Reimbursement", "Logout"];
+  const signLinks = signLinksArr.map((link) => {
+    link = link.replace(/\s/g, "");
+    return (
+      <li key={link}>
+        <Link to={`/${link.toLowerCase()}`}>{link}</Link>
+      </li>
+    );
+  });
   return (
     <div className="navbar">
       <h1> Logo </h1>
