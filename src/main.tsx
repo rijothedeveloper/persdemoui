@@ -5,6 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/homepage/HomePage.tsx";
 import Signin from "./pages/signin/Signin.tsx";
 import Signup from "./pages/signup/Signup.tsx";
+import Logout from "./pages/logout/Logout.tsx";
+import ManagerDashboard from "./pages/managerDashboard/ManagerDashboard.tsx";
+import UserDashboard from "./pages/userDashboard/UserDashboard.tsx";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +24,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/logout",
-        element: <div>Logout</div>,
+        element: <Logout />,
+      },
+      {
+        path: "/manager-dashboard",
+        element: <ManagerDashboard />,
+      },
+      {
+        path: "/user-dashboard",
+        element: <UserDashboard />,
       },
     ],
   },

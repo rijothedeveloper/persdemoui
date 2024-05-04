@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { isSignedIn } from "../../lib/util";
 import "./navbar.styles.css";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserProvider";
 
 export default function Navbar() {
+  const { token } = useContext(UserContext);
   const notSignLinksArr = ["Signin", "Signup"];
   const notSignLinks = notSignLinksArr.map((link) => (
     <li key={link}>
@@ -18,7 +21,7 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <h1> Logo </h1>
-      <ul>{isSignedIn() ? signLinks : notSignLinks}</ul>
+      <ul>{token ? signLinks : notSignLinks}</ul>
     </div>
   );
 }

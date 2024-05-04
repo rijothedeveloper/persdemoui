@@ -19,3 +19,17 @@ export type SignupUserResponse = {
   lastName: string;
   role: Role;
 };
+
+export type Reimbursement = {
+  reimbId: number;
+  description: string;
+  amount: number;
+  status: Status;
+  user: User;
+};
+
+enum Status {
+  APPROVED,
+  DENIED,
+  PENDING,
+}

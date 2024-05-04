@@ -1,3 +1,14 @@
 input[type="radio"] {
   width: 10%;
 }
+
+.flash-message {
+  display: block;
+  margin: 20px;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
