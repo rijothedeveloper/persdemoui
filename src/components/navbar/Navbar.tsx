@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { isSignedIn } from "../../lib/util";
 import "./navbar.styles.css";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserProvider";
 
 export default function Navbar() {

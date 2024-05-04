@@ -1,0 +1,20 @@
+.container {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: rgb(185, 161, 175);
+  border-bottom: 1px solid rgb(185, 161, 175);
+}
+
+.container > p {
+  width: 33%;
+}
+.container > button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(206, 80, 71);
+  background-color: black;
+  color: rgb(206, 80, 71);
+}

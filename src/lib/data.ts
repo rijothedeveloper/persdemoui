@@ -39,14 +39,6 @@ export async function signin(username: string, password: string) {
 
 export async function getMyReimbursements(): Promise<Reimbursement[]> {
   const requestUrl = BASE_URL + "api/v1/reimbursements";
-  // const request = new Request(requestUrl, {
-  //   method: "GET",
-  //   headers: {
-  //     Authorization: `Bearer ${getUserToken()}`,
-  //   },
-  //   mode: "no-cors",
-  // });
-  // const response = await fetch(request);
   const headers = { Authorization: "Bearer " + getUserToken() };
   const response = await fetch(requestUrl, {
     headers,

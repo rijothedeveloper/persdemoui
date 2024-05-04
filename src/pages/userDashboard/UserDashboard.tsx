@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Reimbursement } from "../../lib/types";
 import { getMyReimbursements } from "../../lib/data";
+import ReimbList from "../../components/reimbList/ReimbList";
 
 export default function UserDashboard() {
   const [reimbursements, setReimbursements] = useState<Reimbursement[]>();
@@ -12,12 +13,5 @@ export default function UserDashboard() {
     }
     getReimbursements();
   }, []);
-  // const reimbtags = reimbursements?.map((reimb) => (
-  //   <div key={reimb.reimbId}>
-  //     <h2>{reimb.amount}</h2>
-  //     <p>{reimb.description}</p>
-  //     <p>{reimb.status}</p>
-  //   </div>
-  // ));
-  return <div>reimbtags</div>;
+  return <ReimbList reimbursements={reimbursements} />;
 }
