@@ -96,3 +96,16 @@ export async function getAllUsers(): Promise<User[]> {
   }
   return await response.json();
 }
+
+export async function deleteUser(id: number): Promise<string> {
+  const requestUrl = BASE_URL + "api/v1/users/" + id;
+  const headers = { Authorization: "Bearer " + getUserToken() };
+  const response = await fetch(requestUrl, {
+    headers,
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching reimbursements");
+  }
+  return await response.text();
+}

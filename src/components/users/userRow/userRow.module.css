@@ -11,7 +11,9 @@
 .container > * {
   width: 15%;
 }
-.container > button {
+button {
+  width: 40%;
+  margin: 10px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid rgb(206, 80, 71);

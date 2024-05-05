@@ -1,12 +1,26 @@
+import { useEffect, useState } from "react";
+import { deleteUser } from "../../../lib/data";
 import { User } from "../../../lib/types";
 import UserRow from "../userRow/UserRow";
 import styles from "./userlist.module.css";
 
 export default function UsersList(props) {
-  const users: User[] = props.users;
-  const usertags = users?.map((user) => (
+  const defaultUsers = props.users;
+  const [users, setUsers] = useState<User[]>(defaultUsers);
+  useEffect(() => {
+    setUsers(defaultUsers);
+  }, [defaultUsers]);
+  const onDeleteUser = async (id: number) => {
+    const deletedId = await deleteUser(id);
+    console.log(deletedId);
+    if (deletedId) {
+      const updatedUsers = users.filter((user) => user.id !== id);
+      setUsers(updatedUsers);
+    }
+  };
+  const usertags = users.map((user) => (
     <div>
-      <UserRow user={user} />
+      <UserRow user={user} onDelete={onDeleteUser} />
     </div>
   ));
   return (
