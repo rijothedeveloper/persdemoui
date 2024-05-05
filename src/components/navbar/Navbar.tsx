@@ -5,14 +5,19 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../contexts/UserProvider";
 
 export default function Navbar() {
-  const { token } = useContext(UserContext);
+  const { token, role } = useContext(UserContext);
   const notSignLinksArr = ["Signin", "Signup"];
   const notSignLinks = notSignLinksArr.map((link) => (
     <li key={link}>
       <Link to={`/${link.toLowerCase()}`}>{link}</Link>
     </li>
   ));
-  const signLinksArr = ["Create Reimbursement", "Logout"];
+  let signLinksArr;
+  if (role === "USER") {
+    signLinksArr = ["Create Reimbursement", "Logout"];
+  } else {
+    signLinksArr = ["Users", "Reimbursements", "Logout"];
+  }
   const signLinks = signLinksArr.map((link) => {
     link = link.replace(/\s/g, "");
     return (

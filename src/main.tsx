@@ -6,9 +6,9 @@ import HomePage from "./pages/homepage/HomePage.tsx";
 import Signin from "./pages/signin/Signin.tsx";
 import Signup from "./pages/signup/Signup.tsx";
 import Logout from "./pages/logout/Logout.tsx";
-import ManagerDashboard from "./pages/managerDashboard/ManagerDashboard.tsx";
-import UserDashboard from "./pages/userDashboard/UserDashboard.tsx";
+import Dashboard from "./pages/dashboard/Dashboard.tsx";
 import ReimburseForm from "./pages/reimburseForm/ReimburseForm.tsx";
+import UsersBoard from "./pages/usersBoard/UsersBoard.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,16 +28,16 @@ const router = createBrowserRouter([
         element: <Logout />,
       },
       {
-        path: "/manager-dashboard",
-        element: <ManagerDashboard />,
-      },
-      {
-        path: "/user-dashboard",
-        element: <UserDashboard />,
+        path: "/reimbursements",
+        element: <Dashboard />,
       },
       {
         path: "/createreimbursement",
         element: <ReimburseForm />,
+      },
+      {
+        path: "/users",
+        element: <UsersBoard />,
       },
     ],
   },

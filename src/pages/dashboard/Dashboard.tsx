@@ -1,13 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Reimbursement } from "../../lib/types";
-import { getMyReimbursements } from "../../lib/data";
+import { getAllReimbursements, getMyReimbursements } from "../../lib/data";
 import ReimbList from "../../components/reimbList/ReimbList";
+import { UserContext } from "../../contexts/UserProvider";
 
 export default function UserDashboard() {
   const [reimbursements, setReimbursements] = useState<Reimbursement[]>();
+  const { role } = useContext(UserContext);
   useEffect(() => {
     async function getReimbursements() {
-      const reimbResponse = await getMyReimbursements();
+      let reimbResponse;
+      if (role === "MANAGER") {
+        reimbResponse = await getAllReimbursements();
+      } else {
+        reimbResponse = await getMyReimbursements();
+      }
       setReimbursements(reimbResponse);
       console.log(reimbResponse);
     }

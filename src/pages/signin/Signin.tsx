@@ -29,8 +29,7 @@ export default function Signin() {
       Cookies.set("token", response.token, { expires: 7, secure: true });
       setToken(response.token);
       setRole(response.role);
-      if (response.role === "MANAGER") navigate("/manager-dashboard");
-      else navigate("/user-dashboard");
+      navigate("/reimbursements");
     } else {
       setErrorMessage("Error signing in, try again");
     }

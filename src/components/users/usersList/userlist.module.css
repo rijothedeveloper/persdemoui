@@ -1,0 +1,19 @@
+.container {
+  background-color: black;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.headContainer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headContainer > * {
+  width: 15%;
+}

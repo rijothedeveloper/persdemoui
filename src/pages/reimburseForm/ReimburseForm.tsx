@@ -25,7 +25,7 @@ export default function ReimburseForm() {
     const response = await addReimbursements(form);
     console.log(response);
     if (response.reimbId) {
-      navigate("/user-dashboard");
+      navigate("/reimbursements");
     } else {
       setErrorMessage("Error signing in, try again");
     }

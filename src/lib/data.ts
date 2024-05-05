@@ -42,18 +42,6 @@ export async function signin(username: string, password: string) {
   return await response.json();
 }
 
-export async function getMyReimbursements(): Promise<Reimbursement[]> {
-  const requestUrl = BASE_URL + "api/v1/reimbursements";
-  const headers = { Authorization: "Bearer " + getUserToken() };
-  const response = await fetch(requestUrl, {
-    headers,
-  });
-  if (!response.ok) {
-    throw new Error("Error fetching reimbursements");
-  }
-  return await response.json();
-}
-
 export async function addReimbursements(
   reimburse: ReimbursementRequest
 ): Promise<Reimbursement> {
@@ -73,8 +61,32 @@ export async function addReimbursements(
   return await response.json();
 }
 
+export async function getMyReimbursements(): Promise<Reimbursement[]> {
+  const requestUrl = BASE_URL + "api/v1/reimbursements";
+  const headers = { Authorization: "Bearer " + getUserToken() };
+  const response = await fetch(requestUrl, {
+    headers,
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching reimbursements");
+  }
+  return await response.json();
+}
+
 export async function getAllReimbursements(): Promise<Reimbursement[]> {
-  const requestUrl = BASE_URL + "api/v1/allReimbursements";
+  const requestUrl = BASE_URL + "api/v1/reimbursements/allReimbursements";
+  const headers = { Authorization: "Bearer " + getUserToken() };
+  const response = await fetch(requestUrl, {
+    headers,
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching reimbursements");
+  }
+  return await response.json();
+}
+
+export async function getAllUsers(): Promise<User[]> {
+  const requestUrl = BASE_URL + "api/v1/users";
   const headers = { Authorization: "Bearer " + getUserToken() };
   const response = await fetch(requestUrl, {
     headers,
