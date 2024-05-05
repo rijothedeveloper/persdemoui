@@ -72,3 +72,15 @@ export async function addReimbursements(
   }
   return await response.json();
 }
+
+export async function getAllReimbursements(): Promise<Reimbursement[]> {
+  const requestUrl = BASE_URL + "api/v1/allReimbursements";
+  const headers = { Authorization: "Bearer " + getUserToken() };
+  const response = await fetch(requestUrl, {
+    headers,
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching reimbursements");
+  }
+  return await response.json();
+}

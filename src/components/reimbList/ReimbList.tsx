@@ -35,6 +35,7 @@ export default function ReimbList({ reimbursements }) {
             <option value="DENIED">Denied</option>
           </select>
         </div>
+        <h2></h2>
       </div>
       <div>{reimbtags}</div>
     </div>
