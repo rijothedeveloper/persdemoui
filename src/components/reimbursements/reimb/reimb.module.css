@@ -20,6 +20,10 @@
   background-color: black;
   color: rgb(206, 80, 71);
 }
+.container > button:hover {
+  background-color: rgb(206, 80, 71);
+  color: black;
+}
 .container select {
   border-radius: 8px;
   padding: 10px;

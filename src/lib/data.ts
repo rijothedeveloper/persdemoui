@@ -130,3 +130,23 @@ export async function updateReimbStatus(
   }
   return await response.json();
 }
+
+export async function updateReimbDescription(
+  id: number,
+  description: string
+): Promise<Reimbursement> {
+  const requestUrl = BASE_URL + "api/v1/reimbursements/updateDescription";
+  const headers = {
+    Authorization: "Bearer " + getUserToken(),
+    "Content-Type": "application/json",
+  };
+  const response = await fetch(requestUrl, {
+    headers,
+    method: "PATCH",
+    body: JSON.stringify({ id, description }),
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching reimbursements");
+  }
+  return await response.json();
+}
