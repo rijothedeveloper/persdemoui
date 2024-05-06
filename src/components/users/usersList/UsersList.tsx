@@ -26,9 +26,9 @@ export default function UsersList(props) {
   return (
     <div className={styles.container}>
       <div className={styles.headContainer}>
+        <h2>User Name</h2>
         <h2>First Name</h2>
         <h2>Last Name</h2>
-        <h2>User Name</h2>
         <h2>Email</h2>
         <h2>Role</h2>
         <h2></h2>

@@ -61,7 +61,6 @@ export default function Reimb({ reimb, role }) {
       ) : (
         <p>{reimb.status}</p>
       )}
-
       <button onClick={handleEditClick}>{editMode ? "Save" : "Edit"}</button>
     </div>
   );
