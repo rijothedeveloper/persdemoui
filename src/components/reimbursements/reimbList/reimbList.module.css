@@ -12,10 +12,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1 1 0px;
 }
 
 .headContainer > * {
   /* width: 33%; */
+  flex: 1 1 0px;
 }
 
 .statusContainer {

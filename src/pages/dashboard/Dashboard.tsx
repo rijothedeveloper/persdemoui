@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Reimbursement } from "../../lib/types";
 import { getAllReimbursements, getMyReimbursements } from "../../lib/data";
-import ReimbList from "../../components/reimbList/ReimbList";
+import ReimbList from "../../components/reimbursements/reimbList/ReimbList";
 import { UserContext } from "../../contexts/UserProvider";
 
 export default function UserDashboard() {

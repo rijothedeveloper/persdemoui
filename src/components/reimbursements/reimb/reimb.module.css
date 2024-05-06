@@ -9,12 +9,23 @@
 }
 
 .container > p {
-  width: 33%;
+  flex: 1 1 0px;
+  /* width: 33%; */
 }
 .container > button {
+  width: 15%;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid rgb(206, 80, 71);
   background-color: black;
   color: rgb(206, 80, 71);
+}
+.container select {
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1 1 0px;
+  /* border: 1px solid rgb(185, 161, 175); */
+  border: 1px solid royalblue;
+  background-color: rgb(39, 35, 35);
+  color: rgb(185, 161, 175);
 }

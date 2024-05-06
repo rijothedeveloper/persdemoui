@@ -1,7 +1,7 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import Reimb from "../reimb/Reimb";
 import styles from "./reimbList.module.css";
-import { UserContext } from "../../contexts/UserProvider";
+import { UserContext } from "../../../contexts/UserProvider";
 
 export default function ReimbList({ reimbursements }) {
   const [selectedStatus, setSelectedStatus] = useState("PENDING");
@@ -23,7 +23,7 @@ export default function ReimbList({ reimbursements }) {
       <div className={styles.headContainer}>
         {role === "MANAGER" && <h2>Username</h2>}
         {role === "MANAGER" && <h2>Name</h2>}
-        <h2>Description</h2>
+        <h2 className={styles.item}>Description</h2>
         <h2>Amount</h2>
         <div className={styles.statusContainer}>
           <h2>Status</h2>

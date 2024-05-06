@@ -2,6 +2,7 @@ import {
   Reimbursement,
   ReimbursementRequest,
   SignupUserResponse,
+  Status,
   User,
 } from "./types";
 import { getUserToken } from "./util";
@@ -108,4 +109,24 @@ export async function deleteUser(id: number): Promise<string> {
     throw new Error("Error fetching reimbursements");
   }
   return await response.text();
+}
+
+export async function updateReimbStatus(
+  id: number,
+  status: Status
+): Promise<Reimbursement> {
+  const requestUrl = BASE_URL + "api/v1/reimbursements/updateStatus";
+  const headers = {
+    Authorization: "Bearer " + getUserToken(),
+    "Content-Type": "application/json",
+  };
+  const response = await fetch(requestUrl, {
+    headers,
+    method: "PATCH",
+    body: JSON.stringify({ id, status }),
+  });
+  if (!response.ok) {
+    throw new Error("Error fetching reimbursements");
+  }
+  return await response.json();
 }
